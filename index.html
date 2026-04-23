@@ -3,95 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apps by Vijit | Legal & Support</title>
+    <title>AI Video Magic | Professional AI Video Generation</title>
     <style>
+        :root {
+            --primary: #2563eb;
+            --success: #10b981;
+            --bg: #0f172a;
+            --text: #f8fafc;
+        }
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        nav {
+            width: 100%;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            max-width: 1000px;
+            box-sizing: border-box;
+        }
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
             max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            background-color: #f8fafc;
         }
-        header {
-            text-align: center;
-            border-bottom: 2px solid #3b82f6;
-            padding-bottom: 20px;
-            margin-bottom: 40px;
+        h1 { font-size: 3rem; color: var(--primary); margin-bottom: 10px; }
+        p.subtitle { font-size: 1.2rem; color: #94a3b8; margin-bottom: 30px; }
+        
+        .cta-group {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
         }
-        h1 { color: #1e3a8a; margin-bottom: 5px; }
-        h2 { color: #1e40af; border-left: 4px solid #3b82f6; padding-left: 10px; margin-top: 30px; }
-        .card {
-            background: white;
-            padding: 25px;
+        .btn {
+            padding: 15px 30px;
             border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            margin-bottom: 20px;
-        }
-        .contact-info {
-            background: #eff6ff;
-            padding: 15px;
-            border-radius: 6px;
+            text-decoration: none;
             font-weight: bold;
+            font-size: 1rem;
+            transition: transform 0.2s;
         }
+        .btn:hover { transform: translateY(-2px); }
+        .btn-primary { background: var(--primary); color: white; }
+        .btn-outline { border: 2px solid var(--success); color: var(--success); }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            padding: 40px 20px;
+        }
+        .card {
+            background: #1e293b;
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid #334155;
+        }
+
         footer {
+            margin-top: auto;
+            padding: 40px;
             text-align: center;
-            font-size: 0.9em;
             color: #64748b;
-            margin-top: 50px;
+            font-size: 0.9rem;
         }
-        .highlight { color: #2563eb; }
+        footer a { color: #94a3b8; text-decoration: none; margin: 0 10px; }
+        footer a:hover { text-decoration: underline; }
+
+        /* Privacy Section Styling */
+        #privacy {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 40px 20px;
+            background: #1e293b;
+            border-radius: 12px;
+            text-align: left;
+            display: none; /* Hidden by default, toggle via JS if needed */
+        }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>AI Video Magic</h1>
-        <p>A Chrome Extension by <span class="highlight">Vijit Labs</span></p>
-    </header>
+    <nav>
+        <div style="font-weight: bold; font-size: 1.5rem;">AI Video Magic</div>
+        <div><a href="#privacy" onclick="document.getElementById('privacy').style.display='block'" style="color:#94a3b8; text-decoration:none;">Support</a></div>
+    </nav>
 
-    <div class="card">
-        <h2>Support & Contact</h2>
-        <p>If you have questions regarding your credits, technical issues, or business inquiries, please reach out to us:</p>
-        <div class="contact-info">
-            Email: support@vijit.in<br>
-            Location: Thane, Maharashtra, India
+    <section class="hero">
+        <h1>Transform Prompts into Video</h1>
+        <p class="subtitle">The ultimate Chrome Extension for creators and professionals. Simple, fast, and cinematic.</p>
+        
+        <div class="cta-group">
+            <a href="https://chrome.google.com/webstore/detail/your-id" class="btn btn-primary">Install Extension (1 Free Credit)</a>
+            <a href="https://rzp.io/l/your_live_link" class="btn btn-outline">Buy 10 Credits ($2)</a>
         </div>
-    </div>
+    </section>
 
-    <div class="card">
-        <h2>Pricing & Credits</h2>
-        <p>We believe in simple, transparent pricing with no hidden subscriptions:</p>
-        <ul>
-            <li><strong>Domestic (India):</strong> ₹99 per 1 Video Generation Credit.</li>
-            <li><strong>International:</strong> $2.00 USD per 1 Video Generation Credit.</li>
-        </ul>
-        <p><em>Note: 1 Credit = 1 Successful Video Generation with Voiceover.</em></p>
-    </div>
+    <section class="features">
+        <div class="card">
+            <h3>Instant Credits</h3>
+            <p>New users get 1 free credit automatically upon installation. No credit card required.</p>
+        </div>
+        <div class="card">
+            <h3>Cinematic AI</h3>
+            <p>Built with state-of-the-art models to ensure high-fidelity video results from simple text.</p>
+        </div>
+        <div class="card">
+            <h3>Secure Ledger</h3>
+            <p>Your credits are tied to your Google Account. Access them from any Chrome browser.</p>
+        </div>
+    </section>
 
-    <div class="card">
-        <h2>Refund & Cancellation Policy</h2>
-        <p>At AI Video Magic, we strive for the best quality. However, because AI processing consumes significant cloud computing resources instantly:</p>
+    <section id="privacy">
+        <h2 style="color:var(--primary)">Privacy Policy</h2>
+        <p><strong>Effective Date:</strong> April 2026</p>
+        <p>AI Video Magic is committed to protecting your privacy. This policy outlines how we handle your data:</p>
         <ul>
-            <li><strong>Used Credits:</strong> Credits that have been used to generate a video are non-refundable.</li>
-            <li><strong>Unused Credits:</strong> You may request a full refund for unused credits within 7 days of purchase by emailing support@vijit.in.</li>
-            <li><strong>Cancellation:</strong> There are no recurring subscriptions to cancel. You only pay for what you need.</li>
+            <li><strong>Identity:</strong> We use your Google Email address to identify your account and sync your credit balance.</li>
+            <li><strong>Tracking:</strong> We generate a unique Installation ID to prevent trial abuse and ensure fair usage.</li>
+            <li><strong>Data Security:</strong> Your data is stored securely via Google Cloud and is never shared with third parties.</li>
+            <li><strong>Contact:</strong> For support or data deletion, reach out to <a href="mailto:vijit@vijit.in" style="color:var(--primary)">vijit@vijit.in</a>.</li>
         </ul>
-    </div>
-
-    <div class="card">
-        <h2>Privacy Policy</h2>
-        <p>Your privacy is paramount. This extension follows the Google Limited Use Policy:</p>
-        <ul>
-            <li><strong>Data Collection:</strong> We only access your email address via Google Identity to track your credit balance.</li>
-            <li><strong>Usage:</strong> We do not sell or share your data. Your prompts are used only to generate your requested video.</li>
-            <li><strong>Storage:</strong> Credit balances are stored securely in a private Google Database.</li>
-        </ul>
-    </div>
+        <button onclick="document.getElementById('privacy').style.display='none'" style="background:none; border:1px solid #94a3b8; color:#94a3b8; cursor:pointer; padding:5px 10px; border-radius:4px;">Close</button>
+    </section>
 
     <footer>
-        &copy; 2026 Vijit Labs. All rights reserved. | apps.vijit.in
+        <p>&copy; 2026 Vijitkumar Kunhikandi. All rights reserved.</p>
+        <p>
+            <a href="#privacy" onclick="document.getElementById('privacy').style.display='block'">Privacy Policy</a> | 
+            <a href="mailto:vijit@vijit.in">Contact Support</a>
+        </p>
     </footer>
 
 </body>
