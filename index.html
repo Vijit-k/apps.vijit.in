@@ -3,140 +3,199 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Video Magic | Pro Cinematic B-Roll Generator</title>
+    <title>AI Video Magic | Professional Cinematic B-Roll</title>
     <style>
         :root {
-            --primary: #2563eb;
-            --secondary: #3b82f6;
-            --accent: #10b981;
-            --bg: #0f172a;
-            --card-bg: #1e293b;
-            --text: #f8fafc;
+            --bg: #0b0f1a;
+            --card-bg: #161d2f;
+            --accent: #3b82f6;
+            --accent-hover: #2563eb;
+            --text-main: #ffffff;
             --text-dim: #94a3b8;
+            --glass: rgba(255, 255, 255, 0.03);
         }
 
         body {
-            font-family: 'Inter', -apple-system, sans-serif;
+            font-family: 'Inter', -apple-system, system-ui, sans-serif;
             background-color: var(--bg);
-            color: var(--text);
+            color: var(--text-main);
             margin: 0;
             line-height: 1.6;
+            overflow-x: hidden;
         }
-
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
-
-        /* Header & Nav */
-        nav { padding: 30px 0; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-size: 1.5rem; font-weight: 800; color: var(--primary); text-decoration: none; }
 
         /* Hero Section */
-        .hero { text-align: center; padding: 80px 0; }
-        h1 { font-size: 4rem; margin-bottom: 20px; letter-spacing: -2px; line-height: 1.1; }
-        .hero p { font-size: 1.25rem; color: var(--text-dim); max-width: 700px; margin: 0 auto 40px; }
+        .hero {
+            position: relative;
+            padding: 8rem 2rem 6rem;
+            text-align: center;
+            background: radial-gradient(circle at top right, #1e293b 0%, #0b0f1a 60%);
+        }
 
-        /* Pricing Grid */
-        .pricing-grid { display: flex; gap: 30px; justify-content: center; flex-wrap: wrap; margin-bottom: 60px; }
-        .price-card { 
-            background: var(--card-bg); 
-            border: 1px solid #334155; 
-            padding: 40px; 
-            border-radius: 20px; 
-            width: 340px; 
+        .logo-container {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+
+        .logo-img {
+            width: 140px;
+            height: 140px;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(59, 130, 246, 0.2);
             transition: transform 0.3s ease;
         }
-        .price-card:hover { transform: translateY(-10px); border-color: var(--primary); }
-        .price-card.featured { border: 2px solid var(--primary); position: relative; }
-        .badge { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--primary); padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; }
 
-        .price-amount { font-size: 3rem; font-weight: 800; margin: 20px 0; }
-        .price-amount span { font-size: 1rem; color: var(--text-dim); }
+        .logo-img:hover { transform: translateY(-5px); }
 
-        .btn { 
-            display: block; 
-            padding: 16px; 
-            border-radius: 12px; 
-            text-decoration: none; 
-            font-weight: 700; 
-            text-align: center; 
-            transition: all 0.2s;
+        .badge {
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--accent);
+            padding: 0.5rem 1.2rem;
+            border-radius: 99px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
-        .btn-primary { background: var(--primary); color: white; }
-        .btn-outline { border: 2px solid #334155; color: white; }
 
-        /* Features */
-        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; padding: 80px 0; }
-        .f-card h3 { color: var(--primary); margin-bottom: 10px; }
-        .f-card p { color: var(--text-dim); font-size: 0.95rem; }
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin: 1.5rem 0;
+            letter-spacing: -0.02em;
+            background: linear-gradient(to bottom, #fff 0%, #94a3b8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-        /* Refund & Trust */
-        .trust-bar { background: #161e2e; padding: 40px; border-radius: 24px; text-align: center; border: 1px solid #1e293b; }
-        .trust-bar h2 { color: #facc15; }
+        .subtitle {
+            font-size: 1.25rem;
+            color: var(--text-dim);
+            max-width: 650px;
+            margin: 0 auto 3rem;
+        }
 
-        footer { padding: 60px 0; text-align: center; border-top: 1px solid #1e293b; color: var(--text-dim); font-size: 0.9rem; }
-        footer a { color: var(--text-dim); text-decoration: none; margin: 0 10px; }
+        .cta-button {
+            background: var(--accent);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 12px;
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: all 0.2s;
+            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2);
+        }
+
+        .cta-button:hover {
+            background: var(--accent-hover);
+            transform: scale(1.05);
+        }
+
+        /* Features Section */
+        .container { max-width: 900px; margin: 0 auto; padding: 0 2rem; }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: -2rem;
+        }
+
+        .feat-card {
+            background: var(--glass);
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+        }
+
+        .feat-card h3 { color: var(--accent); margin-top: 0; }
+
+        /* Privacy Policy - Professional & Clear */
+        #privacy {
+            margin: 8rem 0;
+            padding: 3rem;
+            background: var(--card-bg);
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .policy-content { color: var(--text-dim); font-size: 1rem; }
+        .policy-content h2 { color: white; margin-bottom: 1.5rem; }
+        .policy-content h4 { color: white; margin-top: 2rem; }
+
+        footer {
+            text-align: center;
+            padding: 4rem 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-dim);
+        }
+
+        footer a { color: var(--accent); text-decoration: none; margin: 0 10px; }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+        }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <nav>
-        <a href="#" class="logo">AI VIDEO MAGIC</a>
-        <a href="mailto:support@vijit.in" style="color: var(--text-dim); text-decoration: none;">Support</a>
-    </nav>
-
     <section class="hero">
-        <h1>Cinematic B-Roll <br><span style="color:var(--primary)">From a Single Prompt.</span></h1>
-        <p>Stop hunting for stock footage. Generate high-fidelity, unique AI clips for your Reels, Shorts, and TikToks directly from your browser.</p>
-        <div style="display: flex; gap: 15px; justify-content: center;">
-            <a href="#pricing" class="btn btn-primary" style="padding: 16px 40px;">Get 11 Credits Now</a>
+        <div class="logo-container">
+            <img src="icon.png" alt="AI Video Magic" class="logo-img">
         </div>
+        <br>
+        <span class="badge">Official Chrome Extension</span>
+        <h1>AI Video Magic</h1>
+        <p class="subtitle">Transform simple prompts into cinematic 5-second b-roll. Professional AI generation, natively in your browser.</p>
+        <a href="#privacy" class="cta-button">View Privacy Policy</a>
     </section>
 
-    <section class="features">
-        <div class="f-card">
-            <h3>High Fidelity</h3>
-            <p>Powered by Stable Video Diffusion (SVD) for realistic motion and cinematic lighting.</p>
-        </div>
-        <div class="f-card">
-            <h3>Chrome Native</h3>
-            <p>No heavy software. Click the extension, type your vision, and download your clip.</p>
-        </div>
-        <div class="f-card">
-            <h3>No Subscriptions</h3>
-            <p>Pay only for what you use. Your credits never expire as long as your account is active.</p>
-        </div>
-    </section>
-
-    <section id="pricing" class="pricing-grid">
-        <div class="price-card featured">
-            <div class="badge">MOST POPULAR</div>
-            <h3>Global Creator Pack</h3>
-            <div class="price-amount">$2.99 <span>/ 11 Credits</span></div>
-            <p style="color: var(--text-dim); font-size: 0.9rem;">10 Standard + 1 Bonus Credit</p>
-            <a href="https://rzp.io/l/intl_link" class="btn btn-primary">Buy Now (International)</a>
+    <div class="container">
+        <div class="features">
+            <div class="feat-card">
+                <h3>One-Click Magic</h3>
+                <p>No complex setup. Enter a prompt and get cinematic output in seconds.</p>
+            </div>
+            <div class="feat-card">
+                <h3>Native Identity</h3>
+                <p>Uses your Chrome profile to sync credits across all your devices.</p>
+            </div>
+            <div class="feat-card">
+                <h3>4K Potential</h3>
+                <p>Powered by high-fidelity Stable Video Diffusion models.</p>
+            </div>
         </div>
 
-        <div class="price-card">
-            <h3>India Creator Pack</h3>
-            <div class="price-amount">₹249 <span>/ 11 Credits</span></div>
-            <p style="color: var(--text-dim); font-size: 0.9rem;">10 Standard + 1 Bonus Credit</p>
-            <a href="https://rzp.io/l/india_link" class="btn btn-outline">Buy Now (India)</a>
-        </div>
-    </section>
+        <section id="privacy">
+            <div class="policy-content">
+                <h2>Privacy Policy</h2>
+                <p>Last Updated: April 23, 2026</p>
+                
+                <p>AI Video Magic is committed to transparency and data security. Our extension is built to respect your privacy while providing a seamless AI experience.</p>
 
-    <div class="trust-bar">
-        <h2>7-Day Risk-Free Guarantee</h2>
-        <p>Not happy with the AI output? If you haven't used your credits, we will issue a full refund within 7 days of purchase. Just email <strong>support@vijit.in</strong>.</p>
+                <h4>1. Information Disclosure</h4>
+                <p>To facilitate credit management, we access your <strong>Google Email</strong> via Chrome Identity. We also generate an <strong>Anonymous Device ID</strong> to protect against account abuse. Your email is never shared with third parties.</p>
+
+                <h4>2. AI Generation Data</h4>
+                <p>Your prompts are sent to our processing partner (Replicate) to generate video files. No personally identifiable information is attached to these prompts.</p>
+
+                <h4>3. Google API Limited Use</h4>
+                <p>AI Video Magic's use of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy#limited-use" target="_blank" style="color:var(--accent)">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
+
+                <h4>4. Support</h4>
+                <p>Inquiries can be directed to <a href="mailto:support@vijit.in" style="color:var(--accent)">support@vijit.in</a></p>
+            </div>
+        </section>
     </div>
 
     <footer>
-        <p>&copy; 2026 Vijitkumar Kunhikandi. All rights reserved.</p>
-        <div style="margin-top: 15px;">
-            <a href="https://apps.vijit.in#privacy">Privacy Policy</a> | 
-            <a href="mailto:support@vijit.in">Contact</a>
-        </div>
+        <p>&copy; 2026 Vijitkumar Kunhikandi. Built for creators.</p>
+        <a href="https://vijit.in">Portfolio</a> • <a href="#privacy">Privacy</a>
     </footer>
-</div>
 
 </body>
 </html>
