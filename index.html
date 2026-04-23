@@ -3,36 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Video Magic | Cinematic AI B-Roll</title>
+    <title>AI Video Magic | Pro Cinematic B-Roll Generator</title>
     <style>
-        body { font-family: sans-serif; background: #0f172a; color: #f8fafc; text-align: center; padding: 50px; }
-        .card { background: #1e293b; padding: 30px; border-radius: 12px; max-width: 600px; margin: 0 auto; text-align: left; }
-        .btn { display: inline-block; padding: 12px 24px; background: #2563eb; color: white; text-decoration: none; border-radius: 6px; margin-top: 20px; }
-        h1 { color: #2563eb; }
-        .policy { font-size: 0.9rem; color: #94a3b8; margin-top: 40px; }
+        :root {
+            --primary: #2563eb;
+            --secondary: #3b82f6;
+            --accent: #10b981;
+            --bg: #0f172a;
+            --card-bg: #1e293b;
+            --text: #f8fafc;
+            --text-dim: #94a3b8;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+        /* Header & Nav */
+        nav { padding: 30px 0; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.5rem; font-weight: 800; color: var(--primary); text-decoration: none; }
+
+        /* Hero Section */
+        .hero { text-align: center; padding: 80px 0; }
+        h1 { font-size: 4rem; margin-bottom: 20px; letter-spacing: -2px; line-height: 1.1; }
+        .hero p { font-size: 1.25rem; color: var(--text-dim); max-width: 700px; margin: 0 auto 40px; }
+
+        /* Pricing Grid */
+        .pricing-grid { display: flex; gap: 30px; justify-content: center; flex-wrap: wrap; margin-bottom: 60px; }
+        .price-card { 
+            background: var(--card-bg); 
+            border: 1px solid #334155; 
+            padding: 40px; 
+            border-radius: 20px; 
+            width: 340px; 
+            transition: transform 0.3s ease;
+        }
+        .price-card:hover { transform: translateY(-10px); border-color: var(--primary); }
+        .price-card.featured { border: 2px solid var(--primary); position: relative; }
+        .badge { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--primary); padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; }
+
+        .price-amount { font-size: 3rem; font-weight: 800; margin: 20px 0; }
+        .price-amount span { font-size: 1rem; color: var(--text-dim); }
+
+        .btn { 
+            display: block; 
+            padding: 16px; 
+            border-radius: 12px; 
+            text-decoration: none; 
+            font-weight: 700; 
+            text-align: center; 
+            transition: all 0.2s;
+        }
+        .btn-primary { background: var(--primary); color: white; }
+        .btn-outline { border: 2px solid #334155; color: white; }
+
+        /* Features */
+        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; padding: 80px 0; }
+        .f-card h3 { color: var(--primary); margin-bottom: 10px; }
+        .f-card p { color: var(--text-dim); font-size: 0.95rem; }
+
+        /* Refund & Trust */
+        .trust-bar { background: #161e2e; padding: 40px; border-radius: 24px; text-align: center; border: 1px solid #1e293b; }
+        .trust-bar h2 { color: #facc15; }
+
+        footer { padding: 60px 0; text-align: center; border-top: 1px solid #1e293b; color: var(--text-dim); font-size: 0.9rem; }
+        footer a { color: var(--text-dim); text-decoration: none; margin: 0 10px; }
     </style>
 </head>
 <body>
 
-    <h1>AI Video Magic</h1>
-    <p>Generate high-quality AI videos for Reels and Shorts in seconds.</p>
+<div class="container">
+    <nav>
+        <a href="#" class="logo">AI VIDEO MAGIC</a>
+        <a href="mailto:support@vijit.in" style="color: var(--text-dim); text-decoration: none;">Support</a>
+    </nav>
 
-    <div class="card">
-        <h3>Risk-Free Launch Offer</h3>
-        <p>Purchase 10 credits today and receive <strong>1 Bonus Credit</strong> automatically.</p>
-        <p><strong>Price:</strong> $2.99 (Intl) / ₹249 (India)</p>
-        <a href="https://chrome.google.com/webstore" class="btn">Add to Chrome</a>
+    <section class="hero">
+        <h1>Cinematic B-Roll <br><span style="color:var(--primary)">From a Single Prompt.</span></h1>
+        <p>Stop hunting for stock footage. Generate high-fidelity, unique AI clips for your Reels, Shorts, and TikToks directly from your browser.</p>
+        <div style="display: flex; gap: 15px; justify-content: center;">
+            <a href="#pricing" class="btn btn-primary" style="padding: 16px 40px;">Get 11 Credits Now</a>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="f-card">
+            <h3>High Fidelity</h3>
+            <p>Powered by Stable Video Diffusion (SVD) for realistic motion and cinematic lighting.</p>
+        </div>
+        <div class="f-card">
+            <h3>Chrome Native</h3>
+            <p>No heavy software. Click the extension, type your vision, and download your clip.</p>
+        </div>
+        <div class="f-card">
+            <h3>No Subscriptions</h3>
+            <p>Pay only for what you use. Your credits never expire as long as your account is active.</p>
+        </div>
+    </section>
+
+    <section id="pricing" class="pricing-grid">
+        <div class="price-card featured">
+            <div class="badge">MOST POPULAR</div>
+            <h3>Global Creator Pack</h3>
+            <div class="price-amount">$2.99 <span>/ 11 Credits</span></div>
+            <p style="color: var(--text-dim); font-size: 0.9rem;">10 Standard + 1 Bonus Credit</p>
+            <a href="https://rzp.io/l/intl_link" class="btn btn-primary">Buy Now (International)</a>
+        </div>
+
+        <div class="price-card">
+            <h3>India Creator Pack</h3>
+            <div class="price-amount">₹249 <span>/ 11 Credits</span></div>
+            <p style="color: var(--text-dim); font-size: 0.9rem;">10 Standard + 1 Bonus Credit</p>
+            <a href="https://rzp.io/l/india_link" class="btn btn-outline">Buy Now (India)</a>
+        </div>
+    </section>
+
+    <div class="trust-bar">
+        <h2>7-Day Risk-Free Guarantee</h2>
+        <p>Not happy with the AI output? If you haven't used your credits, we will issue a full refund within 7 days of purchase. Just email <strong>support@vijit.in</strong>.</p>
     </div>
 
-    <div class="policy" id="refund-policy">
-        <h3>Refund Policy</h3>
-        <p>We stand by our tool. If you are not satisfied with the video quality, you can request a full refund for all <strong>unused</strong> credits within <strong>7 days</strong> of purchase.</p>
-        <p>To claim a refund, email <strong>support@vijit.in</strong> with your payment receipt. Requests after 7 days are not eligible for refunds.</p>
-    </div>
-
-    <footer style="margin-top: 100px; opacity: 0.6;">
-        &copy; 2026 Vijitkumar Kunhikandi | support@vijit.in
+    <footer>
+        <p>&copy; 2026 Vijitkumar Kunhikandi. All rights reserved.</p>
+        <div style="margin-top: 15px;">
+            <a href="https://apps.vijit.in#privacy">Privacy Policy</a> | 
+            <a href="mailto:support@vijit.in">Contact</a>
+        </div>
     </footer>
+</div>
 
 </body>
 </html>
