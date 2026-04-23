@@ -3,213 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Video Magic | Text to Video Chrome Extension</title>
-    <meta name="description" content="Generate cinematic AI videos directly from your browser. 1 Free Credit for new users.">
-    
+    <title>AI Video Magic | Cinematic AI B-Roll</title>
     <style>
-        :root {
-            --primary: #2563eb;
-            --primary-hover: #1d4ed8;
-            --success: #10b981;
-            --bg: #0f172a;
-            --card-bg: #1e293b;
-            --text: #f8fafc;
-            --text-dim: #94a3b8;
-        }
-
-        * { box-sizing: border-box; }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
-            margin: 0;
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Navigation */
-        nav {
-            padding: 20px 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-weight: 800;
-            font-size: 1.5rem;
-            color: var(--primary);
-            text-decoration: none;
-        }
-
-        /* Hero Section */
-        .hero {
-            text-align: center;
-            padding: 100px 0 60px;
-        }
-
-        h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            letter-spacing: -0.02em;
-        }
-
-        .subtitle {
-            font-size: 1.25rem;
-            color: var(--text-dim);
-            max-width: 600px;
-            margin: 0 auto 40px;
-        }
-
-        /* Buttons */
-        .cta-group {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            margin-bottom: 50px;
-        }
-
-        .btn {
-            padding: 14px 28px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.2s ease;
-        }
-
-        .btn-main {
-            background-color: var(--primary);
-            color: white;
-        }
-
-        .btn-main:hover {
-            background-color: var(--primary-hover);
-            transform: translateY(-2px);
-        }
-
-        .btn-outline {
-            border: 2px solid var(--success);
-            color: var(--success);
-        }
-
-        .btn-outline:hover {
-            background-color: var(--success);
-            color: white;
-        }
-
-        /* Features */
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            padding: 40px 0;
-        }
-
-        .card {
-            background: var(--card-bg);
-            padding: 30px;
-            border-radius: 12px;
-            border: 1px solid #334155;
-        }
-
-        .card h3 { margin-top: 0; color: var(--primary); }
-
-        /* Privacy Policy Section (Anchor Target) */
-        #privacy-policy {
-            margin-top: 80px;
-            padding: 60px 40px;
-            background: #161e2e;
-            border-radius: 16px;
-            border: 1px solid #1e293b;
-        }
-
-        .policy-content h2 { color: var(--primary); }
-        .policy-content h4 { color: var(--text); margin-bottom: 10px; }
-        .policy-content p, .policy-content li { color: var(--text-dim); font-size: 0.95rem; }
-
-        footer {
-            padding: 60px 0;
-            text-align: center;
-            border-top: 1px solid #1e293b;
-            color: var(--text-dim);
-            font-size: 0.9rem;
-        }
-
-        footer a { color: var(--text-dim); text-decoration: none; margin: 0 10px; }
-        footer a:hover { color: var(--primary); }
-
-        @media (max-width: 600px) {
-            h1 { font-size: 2.5rem; }
-            .cta-group { flex-direction: column; }
-        }
+        body { font-family: sans-serif; background: #0f172a; color: #f8fafc; text-align: center; padding: 50px; }
+        .card { background: #1e293b; padding: 30px; border-radius: 12px; max-width: 600px; margin: 0 auto; text-align: left; }
+        .btn { display: inline-block; padding: 12px 24px; background: #2563eb; color: white; text-decoration: none; border-radius: 6px; margin-top: 20px; }
+        h1 { color: #2563eb; }
+        .policy { font-size: 0.9rem; color: #94a3b8; margin-top: 40px; }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <nav>
-            <a href="#" class="logo">AI Video Magic</a>
-            <div class="nav-links">
-                <a href="#privacy-policy" style="color: var(--text-dim); text-decoration: none;">Privacy</a>
-            </div>
-        </nav>
+    <h1>AI Video Magic</h1>
+    <p>Generate high-quality AI videos for Reels and Shorts in seconds.</p>
 
-        <section class="hero">
-            <h1>Cinematic AI Video, <br>Directly in Chrome.</h1>
-            <p class="subtitle">Enter your prompt, hit generate, and watch your vision come to life. No complex software needed.</p>
-            
-            <div class="cta-group">
-                <a href="https://chrome.google.com/webstore" class="btn btn-main">Add to Chrome — It's Free</a>
-                <a href="https://rzp.io/l/your_live_link" class="btn btn-outline">Get 10 Credits ($2)</a>
-            </div>
-            <p style="font-size: 0.85rem; color: var(--success); font-weight: 600;">⚡ 1 Free Credit for every new user</p>
-        </section>
-
-        <section class="features">
-            <div class="card">
-                <h3>One-Click Install</h3>
-                <p>Add the extension and start generating immediately. Your first cinematic clip is on us.</p>
-            </div>
-            <div class="card">
-                <h3>Secure & Private</h3>
-                <p>We use Google Identity to manage your credits securely. Your data stays in your control.</p>
-            </div>
-        </section>
-
-        <section id="privacy-policy">
-            <div class="policy-content">
-                <h2>Privacy Policy</h2>
-                <p>Last Updated: April 2026</p>
-                <p>This policy explains how <strong>AI Video Magic</strong> handles user data in compliance with Chrome Web Store policies.</p>
-                
-                <h4>1. Data Collection</h4>
-                <p>We collect your <strong>Google Email Address</strong> (via the Identity API) to identify your account and manage your credit balance. We also generate a unique <strong>Installation ID</strong> stored in your browser to prevent trial abuse.</p>
-                
-                <h4>2. Data Usage & Purpose</h4>
-                <p>Your data is used strictly for the core functionality of the extension: verifying your identity and synchronizing your purchased credits across different Chrome browsers where you are logged in.</p>
-                
-                <h4>3. Data Security & Sharing</h4>
-                <p>We do not sell, rent, or trade your personal information with third parties. All credit transactions and balances are stored securely in a Google Cloud environment.</p>
-                
-                <h4>4. Data Deletion</h4>
-                <p>You may request the deletion of your account data at any time by emailing <a href="mailto:support@vijit.in" style="color: var(--primary);">support@vijit.in</a>.</p>
-            </div>
-        </section>
-
-        <footer>
-            <p>&copy; 2026 Vijitkumar Kunhikandi. All rights reserved.</p>
-            <div style="margin-top: 10px;">
-                <a href="#privacy-policy">Privacy Policy</a>
-                <a href="mailto:support@vijit.in">Support</a>
-            </div>
-        </footer>
+    <div class="card">
+        <h3>Risk-Free Launch Offer</h3>
+        <p>Purchase 10 credits today and receive <strong>1 Bonus Credit</strong> automatically.</p>
+        <p><strong>Price:</strong> $2.99 (Intl) / ₹249 (India)</p>
+        <a href="https://chrome.google.com/webstore" class="btn">Add to Chrome</a>
     </div>
+
+    <div class="policy" id="refund-policy">
+        <h3>Refund Policy</h3>
+        <p>We stand by our tool. If you are not satisfied with the video quality, you can request a full refund for all <strong>unused</strong> credits within <strong>7 days</strong> of purchase.</p>
+        <p>To claim a refund, email <strong>support@vijit.in</strong> with your payment receipt. Requests after 7 days are not eligible for refunds.</p>
+    </div>
+
+    <footer style="margin-top: 100px; opacity: 0.6;">
+        &copy; 2026 Vijitkumar Kunhikandi | support@vijit.in
+    </footer>
 
 </body>
 </html>
